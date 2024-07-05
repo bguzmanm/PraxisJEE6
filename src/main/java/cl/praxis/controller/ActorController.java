@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cl.praxis.model.dao.ActorDAO;
+import cl.praxis.model.dao.ActorDAOImpl;
 import cl.praxis.model.dto.Actor;
 
 @WebServlet("/actors")
@@ -23,7 +24,7 @@ public class ActorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		ActorDAO aDAO = new ActorDAO();
+		ActorDAO aDAO = new ActorDAOImpl();
 		
 		List<Actor> actores = aDAO.read();
 		
@@ -33,10 +34,7 @@ public class ActorController extends HttpServlet {
 		
 			
 		//actores.stream().forEach(System.out::println);
-		
-		
-		
-		
+			
 		
 	}
 
