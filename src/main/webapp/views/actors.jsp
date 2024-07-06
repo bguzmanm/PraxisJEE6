@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de Actores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -16,13 +17,13 @@
 <link
 	href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css"
 	rel="stylesheet">
-	
-	
-	
 </head>
 <body>
 	<div class="container">
 		<h1>Listado de Actores</h1>
+
+		<a href="${pageContext.request.contextPath}/actorDetails"
+			class="btn btn-primary">Nuevo</a>
 
 		<table class="table" id="tblActor">
 			<thead class="table-dark">
@@ -39,9 +40,12 @@
 						<th><c:out value="${a.getId()}"></c:out></th>
 						<td><c:out value="${a.getFirstName()}"></c:out></td>
 						<td><c:out value="${a.getLastName()}"></c:out></td>
-						<td>
-							<a href="${pageContext.request.contextPath}/actorDetails?id=${a.getId()}" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-							<a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+						<td><a
+							href="${pageContext.request.contextPath}/actorDetails?id=${a.getId()}"
+							class="btn btn-secondary"><i
+								class="fa-solid fa-pen-to-square"></i></a> <a
+							href="${pageContext.request.contextPath}/actorDetails?id=${a.getId()}&op=del"
+							class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -57,16 +61,17 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 		crossorigin="anonymous"></script>
-		
+
 	<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-	
+
 	<script>
 		$(document).ready(()=>{
 			$('#tblActor').DataTable();
 		})
 	</script>
-	
-	<script src="https://kit.fontawesome.com/81a2ed02b0.js" crossorigin="anonymous"></script>
-	
+
+	<script src="https://kit.fontawesome.com/81a2ed02b0.js"
+		crossorigin="anonymous"></script>
+
 </body>
 </html>

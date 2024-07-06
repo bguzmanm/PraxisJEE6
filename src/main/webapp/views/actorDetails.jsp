@@ -14,8 +14,8 @@
 <body>
 	<div class="container">
 		<h1>Actor</h1>
-
-		<form class="form" method="post" action="#">
+		
+		<form class="form" method="post" action="${pageContext.request.contextPath}/actorDetails">
 			<input type="hidden" id="id" name="id" value="${actor.getId()}">
 			<div class="row">
 				<div class="col">
